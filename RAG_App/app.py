@@ -1,7 +1,7 @@
 
 # ==============================
 # STREAMLIT RAG APP
-# Slearner.com | RAG Lab | December 2025
+# RAG Lab
 # ==============================
 
 import os
@@ -15,10 +15,10 @@ chunk_text, add_chunks_to_db,
 retrieve_chunks, build_prompt, ollama_chat
 )
 
-st.set_page_config(page_title="Slearner RAG (Ollama Local)", layout="wide")
+st.set_page_config(page_title="RAG (Ollama Local)", layout="wide")
 
-st.title("Slearner.com RAG Application (Local Ollama)")
-st.caption("""Slearner.com | RAG Training Lab | December 2025""")
+st.title("RAG Application (Local Ollama)")
+st.caption("""RAG App""")
 
 # ------------------------------
 # Sidebar: Upload + Index

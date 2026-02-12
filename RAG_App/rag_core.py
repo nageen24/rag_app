@@ -1,6 +1,6 @@
 # ==============================
 # RAG CORE MODULE
-# Slearner.com | RAG Lab | December 2025
+# RAG Lab 
 # ==============================
 
 import os
@@ -22,9 +22,9 @@ EMBED_MODEL = "nomic-embed-text"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_DIR = os.path.join(BASE_DIR, "rag_db")
-COLLECTION_NAME = "slearner_notes"
+COLLECTION_NAME = "notes"
 
-BRANDING_FOOTER = "— Slearner.com | RAG Lab | December 2025"
+BRANDING_FOOTER = "RAG Lab"
 
 # ------------------------------
 # LOADERS
@@ -131,8 +131,8 @@ def add_chunks_to_db(chunks, source_name: str):
         docs.append(chunk)
         metas.append({
             "source": source_name,
-            "brand": "Slearner.com",
-            "date": "December 2025"
+            "brand": "Practice Project",
+            "date": "2026"
         })
 
     col.add(ids=ids, embeddings=embs, documents=docs, metadatas=metas)
@@ -156,7 +156,7 @@ def build_prompt(context_chunks, question: str):
     context_text = ""
     for idx, (chunk, meta) in enumerate(context_chunks, start=1):
         src = meta.get("source", "Unknown Source")
-        context_text += f"[Source {idx}: {src} | Slearner.com | Dec 2025]\n{chunk}\n\n"
+        context_text += f"[Source {idx}: {src} Practice ]\n{chunk}\n\n"
 
     return f"""CONTEXT:
 {context_text}
